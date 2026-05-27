@@ -4,14 +4,21 @@
 <meta charset="utf-8">
 <title>Week 2 Files</title>
 <style type="text/css">
-	.border{border:1px solid black;}
-</style>
+    div {
+        border:1px solid black;
+
+		margin-bottom:5px;
+    }
+	</style>
 </head>
 
 <body>
 </body>
 
 <script type="text/javascript">
+
+	var body = document.querySelector(`body`)
+
 	//Use this Array of objects to complete the assignment.
 	var people =[
 		{first:"Jason", last:"Vorhees", credit:"Friday the 13th"},
@@ -20,16 +27,36 @@
 		{first:"Kevin", last:"McCallister", credit:"Home Alone" },
 		{first:"Godzilla", last:"King of The Monsters", credit:"Godzilla" },
 		{first:"Buzz", last:"Lightyear", credit:"Toy Story" },
-		{first:"Marion", last:"Cobretti", credit:"Cobra" }
+		{first:"Marion", last:"Cobretti", credit:"Cobra" },
 
-		{first:"", last:"", credit:"Treasure Planet" }
-		{first:"Monkey", last:"", credit:"One Piece" }
-		{first:"Kazuma", last:"Satou", credit:"Konosuba" }
-		{first:"Subaru", last:"Natsuki", credit:"Re:Zero" }
-		{first:"", last:"", credit:"Sword Art Online" }
-		{first:"", last:"", credit:"" }
+		{first:"Jim", last:"Hawkins", credit:"Treasure Planet" },
+		{first:"Monkey", last:"D, Luffy", credit:"One Piece" },
+		{first:"Kazuma", last:"Satou", credit:"Konosuba" },
+		{first:"Natsuki", last:"Subaru", credit:"Re:Zero" },
+		{first:"Kirigaya", last:"Kazuto", credit:"Sword Art Online" },
+		{first:"King", last:"Arthur", credit:"Monty Python and the Holy grail" }
+
+
 	]
+
+	for(let i = 0; i < people.length; i++)
+		{
+			var tempDiv = document.createElement(`div`)
+			tempDiv.setAttribute("id", i)
+			tempDiv.setAttribute("class", "black")
+			//document.querySelector(`tempDiv`).className = `text/css`
+			for(let key in people[i])
+			{
+				var p = document.createElement(`p`)
+				var text = document.createTextNode(people[i][key])
+				p.appendChild(text)
+				tempDiv.appendChild(p)
+
+			}
+		body.appendChild(tempDiv)
+		}
 	
 </script>
+
 
 </html>
